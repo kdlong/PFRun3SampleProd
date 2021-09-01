@@ -1,0 +1,18 @@
+Universe             = vanilla
+Executable           = ZToEE_noPU_12_0.sh
+GetEnv               = false
+
+ShouldTransferFiles  = no
+request_memory       = 8000
+request_disk         = 2048000
+request_cpus         = 4
+use_x509userproxy = True
++JobFlavour = "longlunch"
+transfer_output_files = No
+
+Arguments = $(Process) 400 /store/group/phys_pf/Run3PreparationSamples/EGMExtendedElectrons/Zee_12_0_0_pre6_recoMod 1
+output = logs_ZToEE_noPU_12_0_recoMod/job$(Process).out
+error = logs_ZToEE_noPU_12_0_recoMod/job$(Process).err
+Log = logs_ZToEE_noPU_12_0_recoMod/job$(Process).log
+
+Queue 100
