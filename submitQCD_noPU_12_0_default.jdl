@@ -8,7 +8,6 @@ request_disk         = 2048000
 request_cpus         = 4
 use_x509userproxy = True
 +JobFlavour = "workday"
-transfer_output_files = No
 
 Arguments = $(Process) 2000 /store/group/phys_pf/Run3PreparationSamples/EGMExtendedElectrons/QCD_12_0_0_pre6_default 
 output = logs_ZToEE_noPU_12_0_default/job$(Process).out
