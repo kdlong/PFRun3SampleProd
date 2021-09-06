@@ -45,4 +45,4 @@ xrdcp $recofile root://eoscms.cern.ch/${basepath}/RECO/$recofile
 
 cmsDriver.py step1 --mc --eventcontent MINIAODSIM --datatier MINIAODSIM --conditions auto:phase1_2021_realistic --step PAT --nThreads 4 --era Run3 --filein file:$recofile --fileout file:$minifile -n -1
 xrdcp $minifile root://eoscms.cern.ch/${basepath}/MINIAOD/$minifile
-
+rm *.root
