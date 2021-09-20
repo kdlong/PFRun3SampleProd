@@ -34,7 +34,7 @@ cmsDriver.py Configuration/GenProduction/python/EGM-Run3Winter21GS-00001-fragmen
 # cmsDriver.py step1 --mc --eventcontent PREMIXRAW --datatier GEN-SIM-DIGI-RAW --conditions 120X_mcRun3_2021_realistic_v6 --step DIGI,DATAMIX,L1,DIGI2RAW,HLT --procModifiers premix_stage2 --nThreads 4 --geometry DB:Extended --datamix PreMix --era Run3  --filein file:EGM-Run3Summer21GS-00001.root --fileout file:EGM-Run3Summer21DRPremix-00001_1.root  --pileup 2022_LHC_Simulation_10h_2h --pileup_input das:/RelValMinBias_14TeV/CMSSW_12_0_0-120X_mcRun3_2021_realistic_v4-v1/GEN-SIM
 # No PU
 cmsDriver.py step1 --mc --eventcontent RAWSIM --pileup NoPileUp --customise Configuration/DataProcessing/Utils.addMonitoring --datatier GEN-SIM-DIGI-RAW --nThreads 4 --fileout file:$gsdfile --conditions 120X_mcRun3_2021_realistic_v6 --step DIGI,L1,DIGI2RAW,HLT:GRun --geometry DB:Extended --era Run3 --filein file:$gsdfile --fileout file:$digifile -n -1
-xrdcp $minifile root://eoscms.cern.ch/${basepath}_defaultReco/GSD/$digifile
+xrdcp $digifile root://eoscms.cern.ch/${basepath}_defaultReco/GSD/$digifile
 
 cmsDriver.py step2 --mc --eventcontent RECOSIM --datatier GEN-SIM-RECO --conditions 120X_mcRun3_2021_realistic_v6 --step RAW2DIGI,L1Reco,RECO,RECOSIM --nThreads 4 --geometry DB:Extended --era Run3 --filein file:$digifile --fileout file:$recofile -n -1
 

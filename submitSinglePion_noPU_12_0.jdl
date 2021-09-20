@@ -1,0 +1,17 @@
+Universe             = vanilla
+Executable           = singlePionPFHadCalib.sh
+GetEnv               = false
+
+ShouldTransferFiles  = no
+request_memory       = 8000
+request_disk         = 2048000
+request_cpus         = 4
+use_x509userproxy = True
++JobFlavour = "tomorrow"
+
+Arguments = $(Process) 10 /store/group/phys_pf/Run3PreparationSamples/PFHadronCalibration/SinglePion_E2To200GeV/
+output = logs_singlePionPFHadCalib/job$(Process).out
+error = logs_singlePionPFHadCalib/job$(Process).err
+Log = logs_singlePionPFHadCalib/job$(Process).log
+
+Queue 10
